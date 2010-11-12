@@ -1,4 +1,4 @@
-rscurl.sh is an atempt to create a command line tool that interfaces with Rackspace Cloud Server's API.  The goal in creating it was to use widely available tools so it is written as a shell script and uses apt, curl, grep, sed, and tr.  
+rscurl.sh is an atempt to create a command line tool that interfaces with Rackspace Cloud Server's API.  The goal in creating it was to use widely available tools so it is written as a shell script and uses apt, curl, grep, sed, and tr. It has been tested on Apple OS X terminal, CentOS, and Ubuntu.   
 
 It supports the following commands:
 
