@@ -1,5 +1,9 @@
 #!/bin/bash
 # by Jason Janelle
+#	 j@jsquaredconsulting.com
+#
+# Copyright Notice: GPL
+#
 #rscurl -u username -a apiKey -c command [ -s serverID ] [ -n name ] [ -i imageID ] [ -f flavorID ] [ -q -h ]
 #	v 0.1
 #	rscurl is a command line tool for managing Rackspace Cloud Servers.  It uses curl, awk, sed, 
