@@ -202,7 +202,7 @@ function print_flavor_header () {
 }
 #Prints the header for the image list.
 function print_image_header () {
-	printf "%-10s%-40s%-10s%-30s%-30s\n" ID Status Date\ Created Date\ Updated Image\ Name
+	printf "%-10s%-40s%-10s%-30s%-30s\n" ID Image\ Name Status Date\ Created Date\ Updated
 	echo --------- --------------------------------------- --------- ----------------------------- -----------------------------
 }
 #Prints a formatted list of the servers.
