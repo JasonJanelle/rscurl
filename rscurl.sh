@@ -190,6 +190,11 @@ function get_servers () {
 	SERVERS=`curl -s -X GET -H X-Auth-Token:\ $1 $2/servers|tr -s [:cntrl:] "\n" \
 	    |sed -e 's/{"servers":\[{//' -e 's/}\]}//' -e 's/},{/;/g' -e 's/"id"://g' -e 's/"name"://g'`
 }
+#Retreives the backups for the provided server
+#REQUIRES: 1=AuthToken 2=RS_Management_Server 3=Server_ID
+function get_backups () {
+	ls
+}
 #Prints the header for the server list.
 function print_server_header () {
 	printf "%-7s%-40s%-20s%-10s%-50s%-20s%-20s\n" ID Server\ Image Server\ Flavor Status Server\ Name Public\ IP Private\ IP
@@ -361,6 +366,7 @@ case $MYCOMMAND in
 	list-servers	) print_servers ;;
 	list-flavors	) print_flavors ;;
 	list-images		) print_images ;;
+	list-backups	) print_backups ;;
 	delete-server	) 
 		if test -z $RSSERVID
 			then 
@@ -426,7 +432,7 @@ case $MYCOMMAND in
 			fi
 			exit 98
 		fi
-		rebuild $TOKEN $MGMTSVR $RSSERVID $RRIMAGEID ;;
+		rebuild $TOKEN $MGMTSVR $RSSERVID $RSIMAGEID ;;
 	resize			) 
 		if test -z $RSSERVID
 			then 
@@ -442,7 +448,7 @@ case $MYCOMMAND in
 			fi
 			exit 98
 		fi
-		resize $TOKEN $MGMTSVR $RSSERVID $RRFLAVORID ;;
+		resize $TOKEN $MGMTSVR $RSSERVID $RSFLAVORID ;;
 	confirm-resize	) 
 		if test -z $RSSERVID
 			then 
