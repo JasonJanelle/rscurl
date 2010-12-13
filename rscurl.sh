@@ -316,6 +316,7 @@ function http_code_eval () {
 			404	) echo "Server ID not found."; exit $1;;
 			409	) echo "Server is currently being built, please wait and retry."; exit $1;;
 			413	) echo "API Request limit reached, please wait and retry."; exit $1;;
+			422	) echo "Unprocessable Entity, cannot resize while a backup is in progress."; exit $1;;
 			503	) echo "Rackspace Cloud service unavailable, please check and then retry."; exit $1;;
 			*	) echo "An unknown error has occured. ($RC)"; exit 99;;
 		esac
